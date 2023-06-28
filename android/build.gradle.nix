@@ -5,6 +5,9 @@
 , googleServicesClasspath
 , googleServicesPlugin
 , universalApk
+, compileSdkVersion ? "30"
+, targetSdkVersion ? "33"
+, minSdkVersion ? "21"
 }:
 ''
 buildscript {
@@ -44,7 +47,7 @@ allprojects {
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion 30
+    compileSdkVersion ${compileSdkVersion}
     buildToolsVersion '30.0.2'
 
     lintOptions {
@@ -69,8 +72,8 @@ android {
 
     defaultConfig {
         applicationId "${applicationId}"
-        minSdkVersion 21
-        targetSdkVersion 33
+        minSdkVersion ${minSdkVersion}
+        targetSdkVersion ${targetSdkVersion}
         versionCode ${version.code}
         versionName "${version.name}"
         multiDexEnabled false
