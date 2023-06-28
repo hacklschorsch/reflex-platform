@@ -36,7 +36,7 @@ in {
     keyStore = releaseKey.storeFile or null;
     keyStorePassword = releaseKey.storePassword or null;
     name = applicationId;
-    platformVersions = [ "29" ];
+    platformVersions = platformVersions;
     release = false;
     src =
       let splitApplicationId = splitString "." applicationId;
@@ -57,6 +57,7 @@ in {
       in nixpkgs.runCommand "android-app" {
         buildGradle = builtins.toFile "build.gradle" (import ./build.gradle.nix {
           inherit applicationId version additionalDependencies releaseKey universalApk;
+          inherit (gradle) compileSdkVersion targetSdkVersion minSdkVersion;
           googleServicesClasspath = optionalString (googleServicesJson != null)
             "classpath 'com.google.gms:google-services:4.3.3'";
           googleServicesPlugin = optionalString (googleServicesJson != null)

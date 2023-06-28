@@ -72,6 +72,18 @@ in rec {
       #   keyPassword = "password";
       # }
 
+    , platformVersions ? null
+      # A list of strings of Android SDK versions which ... we do stuff with,
+      # and also things maybe?  If you can figure this out, let me know I guess.
+
+    , gradle ? {}
+      # Parameters to control the Gradle build file that is generated.
+      # Currently supported attributes (all strings ... of numbers):
+      #
+      # compileSdkVersion
+      # targetSdkVersion
+      # minSdkVersion
+
     , isRelease ? releaseKey != null
 
     , resources ? defaultResources
@@ -145,6 +157,8 @@ in rec {
               universalApk
               mavenDeps
               usesCleartextTraffic
-              gradleTask;
+              gradleTask
+              platformVersions
+              gradle;
     };
 }
