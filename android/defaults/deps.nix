@@ -9,6 +9,14 @@
 
   { artifactId = "annotation";
     groupId = "androidx.annotation";
+    version = "1.0.2";
+    repo = "https://maven.google.com/";
+    jarSha256 = "9bcdf4cc5003121db87b51de5f51db5805df335d42a36a70a5ab7405c23163f2";
+    pomSha256 = "5c868549925a588e117a185ead865807ad8822676e0d7c804c2747d8dd5866f9";
+    aarSha256 = null; }
+
+  { artifactId = "annotation";
+    groupId = "androidx.annotation";
     version = "1.1.0";
     repo = "https://maven.google.com/";
     jarSha256 = "d38d63edb30f1467818d50aaf05f8a692dea8b31392a049bfa991b159ad5b692";
@@ -57,11 +65,11 @@
 
   { artifactId = "core";
     groupId = "androidx.core";
-    version = "1.0.0";
+    version = "1.0.2";
     repo = "https://maven.google.com/";
     jarSha256 = null;
-    pomSha256 = "384d529ad668ada4808de29b29a6348f0007c2841ad79cae9a5a089bd68810f5";
-    aarSha256 = "d7672358fc0d46de678968bcddfd3bdfe1618574299a753477b16116cfec74f5"; }
+    pomSha256 = "b74b0f048eccd6a1e7d91679d4750e218c46e9031f1e306ba2a244a137198e46";
+    aarSha256 = "cdf51757638f445d133df0d1b44eae5f0918405ca9f966aad7415c702b68b378"; }
 
   { artifactId = "cursoradapter";
     groupId = "androidx.cursoradapter";
